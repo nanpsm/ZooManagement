@@ -18,6 +18,14 @@ public class Animal {
     public int getAreaNeeded(){
         return areaNeeded;
     }
+
+    public void setSpecises(String specises){
+	this.specises = specises;
+    }
+
+    public void setAreaNeeded(int areaNeeded){
+         this.areaNeeded = areaNeeded;
+    }
     
     // method
     public boolean hasCompanion() {
