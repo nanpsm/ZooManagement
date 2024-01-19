@@ -1,5 +1,5 @@
 public class Animal {
-	private String species;
+    private String species;
     private Enclosure enclosure;
     private int areaNeeded;
     
@@ -18,6 +18,15 @@ public class Animal {
     public int getAreaNeeded(){
         return areaNeeded;
     }
+
+    public void setSpecies(String species){
+        this.species = species;
+    }
+
+    public void setAreaNeeded(){
+        this.areaNeeded = areaNeeded;
+    }
+	
     
     // method
     public boolean hasCompanion() {
