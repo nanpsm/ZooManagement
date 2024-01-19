@@ -40,20 +40,36 @@ public class Enclosure {
         return animals.size();
     }
     
-    public int getUtilisedArea() {
-    	return 0;
+    public int getUtilisedArea(){
+        int utilisedArea = 0;
+        for(Animal animal : animals){
+            utilisedArea = utilisedArea + animal.getAreaNeeded();
+        }
+        return utilisedArea;
     }
     
-    public double getUtilisedAreaPercentage() {
-    	return 0.0;
+    public double getUtilisedAreaPercentage(){
+        return (double)getUtilisedArea()/getArea();
     }
     
-    public int countSpecies(String species) {
-    	return 0;
+    public int countSpecies(String type){
+        ArrayList<String> uniqueSpecies = new ArrayList<>();
+        for (Animal animal : animals) {
+            if (!uniqueSpecies.contains(animal.getSpecies())) {
+                uniqueSpecies.add(animal.getSpecies());
+            }
+        }
+        return uniqueSpecies.size();
     }
     
-    public boolean addAnimal(ArrayList<Animal> animal) {
-    	return false;
+    public boolean addAnimal(Animal animal){
+        if ((getUtilisedArea() + animal.getAreaNeeded()) < getArea()) {
+            animals.add(animal);
+            return true;
+        }
+        else {
+            return false;
+        }
     }
     
 }
