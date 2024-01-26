@@ -21,12 +21,8 @@ public class Animal {
     
     // method
     public boolean hasCompanion() {
-        for (Animal animal : enclosure.getAnimals()) {
-            if (animal != this && animal.getSpecies().equals(species)) {
-                return true;
-            }
-        }
-        return false;
+        return enclosure.countSpecies(species)>1;
     }
+    
     
 }
